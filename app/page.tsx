@@ -1,6 +1,5 @@
-import Image from "next/image";
+
 import List from "./components/List"
-import getCoffe from "./components/utils/api";
 
 export default async function Home() {
 

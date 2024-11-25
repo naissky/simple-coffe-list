@@ -1,4 +1,5 @@
-import Heart from "./ui/Heart";
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode, Key } from "react";
+// import Heart from "./ui/Heart";
 import HeartNo from "./ui/HeartNo";
 import getCoffe from "./utils/api";
 
@@ -11,7 +12,7 @@ export default async function Card() {
     return (
         <div className="py-5 flex flex-col md:flex-row flex-wrap justify-center items-center">
             {
-                coffe.map((coffe, index) => (
+                coffe.map((coffe: { image: string | undefined; name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; price: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; rating: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<AwaitedReactNode> | null | undefined; votes: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }, index: Key | null | undefined) => (
                     <div key={index}>
                         <div className="flex flex-col py-4 px-4 rounded-lg max-w-md gap-2">
                             <img src={coffe.image} className="w-60 h-32 bg-black rounded-lg" />
@@ -21,7 +22,7 @@ export default async function Card() {
                             </div>
                             <div className="flex flex-row justify-start gap-2 items-center">
                                 <label>
-                                    {coffe.rating > 0 && <Heart />}
+                                    {/* {coffe.rating > 0 && <Heart />} */}
                                 </label>
                                 <label className="text-sm text-coffe font-semibold">
                                     {coffe.rating !== null ? coffe.rating : <HeartNo/>}
